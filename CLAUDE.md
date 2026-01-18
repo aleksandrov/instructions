@@ -26,7 +26,7 @@ TODO
 
 ## Test Driven Development (TDD)
 
-- Each test should have a `Covers: REQ-XXX-N` comment referencing requirement IDs from this file.
+- Each test should have a `Covers: REQ-XXX-N` annotation referencing requirement IDs from this file. Use language appropriate place to put such annotation (ie comment, attribute, annotation etc).
 - If functionality is changed tests and their comments should be updated to reflect the change was made.
 
 ## Requirements Tracking
@@ -41,3 +41,5 @@ Run `scripts/coverage-report.sh` to check coverage. Output shows:
 - All requirements defined in this file
 - Requirements covered by tests
 - Uncovered requirements
+
+Requirements in CLAUDE.md should be defined as set of unnumbered lists (better diffs)
