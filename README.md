@@ -19,9 +19,10 @@ This template provides:
 
 ## How to use
 
-1. Clone this repo.
-2. Add/modify you requirements to `TODO.md`
-3. Ask your AI coding assistant: "Implement requirements `TODO.md`"
+1. Ask your coding agent to "apply instructions from [https://github.com/aleksandrov/instructions](https://github.com/aleksandrov/instructions)".
+2. Review changes made in your repository.
+3. Add/modify you requirements to `TODO.md`
+4. Ask your AI coding assistant: "Implement requirements `TODO.md`"
 
 > The assistant will follow the instructions defined in TODO.md/CLAUDE.md to implement the requirements. Implemented requirements will be automatically copied to CLAUDE.md
 
