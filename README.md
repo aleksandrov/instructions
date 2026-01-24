@@ -12,7 +12,9 @@ When using AI coding assistants, it's easy to lose track of:
 ## Solution
 
 This template provides:
-- **Structured requirements** in [CLAUDE.md](CLAUDE.md) with trackable IDs (`[REQ-XXX-N]`)
+- **Structured requirements** in [REQUIREMENTS.md](REQUIREMENTS.md) with trackable IDs (`[REQ-XXX-N]`)
+- **Architecture documentation** in [ARCHITECTURE.md](ARCHITECTURE.md)
+- **Static instructions** in [CLAUDE.md](CLAUDE.md) for agent guidance
 - **Test-to-requirement linking** via `Covers: REQ-XXX-N` comments
 - **Coverage reporting** to identify untested requirements
 
@@ -39,7 +41,7 @@ The template instructs Claude to work in one of two modes based on priority:
 4. Agent refines ideas into structured requirements in `TODO` section
 5. Edit/adjust requirements as needed
 6. Ask agent to 'follow instructions' again
-7. Agent implements requirements from `TODO` section and moves them to [CLAUDE.md](CLAUDE.md)
+7. Agent implements requirements from `TODO` section and moves them to [REQUIREMENTS.md](REQUIREMENTS.md)
 
 ### Development Mode
 
@@ -47,7 +49,8 @@ The agent:
 - Reads requirements from `TODO` section of [TODO.md](TODO.md)
 - Implements them with test coverage
 - Tracks requirement coverage before/after
-- Moves implemented requirements to [CLAUDE.md](CLAUDE.md)
+- Adds implemented requirements to [REQUIREMENTS.md](REQUIREMENTS.md) with IDs
+- Updates [ARCHITECTURE.md](ARCHITECTURE.md) if architectural changes made
 - Clears `TODO` section
 
 ### Refinement Mode
