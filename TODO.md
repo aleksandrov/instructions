@@ -2,9 +2,10 @@
 
 - move implemented requirements list to `REQUIREMENTS.md`
 
-# REFINEMENT (Refined requirements, reference only, take it into account but do not implement)
+# Refinement
 
+Items here will be refined into TODO section.
 
-# DRAFTS (Future requirements, reference only, take it into account but do not implement)
+# Drafts
 
-Future improvements go here
+Future improvements go here. Context only, not for immediate implementation.

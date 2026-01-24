@@ -23,25 +23,41 @@ This template provides:
 
 ## How to Use
 
-First, you can write down draft ideas in the `DRAFTS` section of [TODO.md](TODO.md). Ideas written here will not be implemented immediately, but provide context for potential changes which might be implemented in future.
+The template instructs Claude to work in one of two modes based on priority:
 
-The template instructs Claude to work in one of two modes:
+### Mode Priority
+
+1. **Development mode** takes priority if `TODO` section has items
+2. **Refinement mode** runs only if `TODO` section is empty
+3. **Drafts section** provides context but isn't processed
+
+### Workflow
+
+1. Write draft ideas in `Drafts` section of [TODO.md](TODO.md) (optional, for context)
+2. Move ideas you want refined to `Refinement` section of [TODO.md](TODO.md)
+3. Ask agent to 'follow instructions'
+4. Agent refines ideas into structured requirements in `TODO` section
+5. Edit/adjust requirements as needed
+6. Ask agent to 'follow instructions' again
+7. Agent implements requirements from `TODO` section and moves them to [CLAUDE.md](CLAUDE.md)
+
+### Development Mode
+
+The agent:
+- Reads requirements from `TODO` section of [TODO.md](TODO.md)
+- Implements them with test coverage
+- Tracks requirement coverage before/after
+- Moves implemented requirements to [CLAUDE.md](CLAUDE.md)
+- Clears `TODO` section
 
 ### Refinement Mode
 
-You can briefly describe ideas you want refined in the `REFINEMENT` section of [TODO.md](TODO.md), or copy them from the `DRAFTS` section of [TODO.md](TODO.md).
-
-Then ask the agent to 'follow instructions'.
-
-> The agent will analyse and refine your ideas into a structured list of requirements to implement in the `TODO` section of [TODO.md](TODO.md). You can edit/add/remove them or ask the agent to refine them further. The final list of these requirements is the input for `Implementation mode` described below.
-
-### Implementation Mode
-
-In this mode, the agent takes the list of requirements from the `TODO` section of [TODO.md](TODO.md), implements them, and then cleans up the `TODO` section. Implementation mode has priority, so the agent will ignore the `REFINEMENT` section until there are no requirements to implement in the `TODO` section.
-
-Just ask the agent to 'follow instructions'.
-
-> The assistant will follow the instructions defined in [TODO.md](TODO.md) and [CLAUDE.md](CLAUDE.md) to implement the requirements. Implemented requirements will be automatically copied to [CLAUDE.md](CLAUDE.md).
+The agent:
+- Reads ideas from `Refinement` section of [TODO.md](TODO.md)
+- Researches best practises and similar projects
+- Creates structured requirements
+- Writes them to `TODO` section for implementation
+- Clears `Refinement` section
 
 # Feedback
 

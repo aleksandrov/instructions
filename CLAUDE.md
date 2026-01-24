@@ -1,5 +1,12 @@
 Brief description of the project. Standard `Hello, World!` example.
 
+# Mode Selection
+
+Check TODO.md and select mode:
+1. If `TODO` section has items → Use **Development** mode (skip Refinement)
+2. If `TODO` section is empty AND `Refinement` section has items → Use **Refinement** mode
+3. If both are empty → Await user instructions
+
 # Functionality
 
 1. [REQ-CORE-1] Application should ask for user's name
@@ -11,33 +18,41 @@ TODO
 
 # Refinement
 
-1. Next features to refine are listed in [TODO.md](TODO.md) (`Refinement` section)
-2. If that section is empty, check the `TODO` section of [TODO.md](TODO.md) instead
-3. Research the following:
-   1. Best practises for implementing the feature
-   2. What projects have similar functionality? What else could be easily implemented?
-   3. What non-functional requirements do similar projects usually have?
-4. Build a list of functional and non-functional requirements and write them to the `TODO` section of [TODO.md](TODO.md)
-5. Check if any requirements already exist in the `Functionality` section of [CLAUDE.md](CLAUDE.md) - don't produce duplicates
-6. Clean up the `Refinement` section of [TODO.md](TODO.md)
-7. Don't update the `Refinement` section of this document
+**Prerequisites**: Only use this mode if TODO section in TODO.md is empty. Otherwise use Development mode.
+
+Source: `Refinement` section of TODO.md
+
+Steps:
+1. Research:
+   - Best practises for implementing the feature
+   - Similar projects: what functionality do they have?
+   - Non-functional requirements from similar projects
+2. Build list of functional and non-functional requirements
+3. Check existing requirements in CLAUDE.md Functionality section - avoid duplicates
+4. Write requirements to TODO section of TODO.md
+5. Clear Refinement section of TODO.md
 
 # Development
 
-1. Next features to implement are listed in [TODO.md](TODO.md) (`TODO` section)
-2. Before starting any changes, run the requirements tracking report and save it to `REQS-REPORT-ORIGINAL.md`
-3. Copy the feature description to [CLAUDE.md](CLAUDE.md) and assign it a requirement ID
-4. Implement the new functionality
-5. Once the feature is implemented:
-   1. Update the `Functionality` section of [CLAUDE.md](CLAUDE.md) with new requirements
-   2. Update the `Architecture` section of [CLAUDE.md](CLAUDE.md) to reflect architectural changes
-   3. Remove the feature description from [TODO.md](TODO.md)
-   4. Run the requirements tracking report and save it to `REQS-REPORT-FINAL.md`
-   5. Find differences between `REQS-REPORT-FINAL.md` and `REQS-REPORT-ORIGINAL.md`. Plan additional tests and rerun the requirements tracking report to minimise the number of untested requirements
-6. [CLAUDE.md](CLAUDE.md) should contain only high-level functionality explanations
-7. Don't add new sections to [TODO.md](TODO.md) - it contains only ongoing requirements or requirement drafts
-8. Git history of [CLAUDE.md](CLAUDE.md) and [TODO.md](TODO.md) should help understand how requirements evolved over time
-9. Don't update the `Development` section of this document
+**Priority**: This mode takes priority over Refinement mode.
+
+Source: `TODO` section of TODO.md
+
+Steps:
+1. Run `scripts/coverage-report.sh` → save to REQS-REPORT-ORIGINAL.md
+2. Copy feature description from TODO.md to CLAUDE.md Functionality section → assign requirement ID
+3. Implement the functionality
+4. Update CLAUDE.md:
+   - Functionality section: add requirements
+   - Architecture section: reflect changes (high-level only)
+5. Remove feature from TODO.md
+6. Run `scripts/coverage-report.sh` → save to REQS-REPORT-FINAL.md
+7. Compare REQS-REPORT-ORIGINAL.md vs REQS-REPORT-FINAL.md → plan tests for uncovered requirements → rerun report
+
+Notes:
+- CLAUDE.md contains high-level explanations only
+- TODO.md contains only active requirements or drafts
+- Git history tracks requirement evolution
 
 ## Test Driven Development (TDD)
 
