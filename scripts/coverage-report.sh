@@ -6,7 +6,7 @@
 cd "$(dirname "$0")/.."
 
 echo "=== REQUIREMENTS ==="
-grep -oE 'REQ-[A-Z]+-[0-9]+' REQUIREMENTS.md 2>/dev/null | sort -u
+grep -oE 'REQ-[A-Z0-9]+-[0-9]+' REQUIREMENTS.md 2>/dev/null | sort -u
 
 echo ""
 echo "=== COVERED BY TESTS ==="
@@ -41,12 +41,12 @@ find . -type f \( \
   -not -name '*.xml' \
   -not -name '*.csproj' \
   -exec grep -ohE 'Covers:.*' {} \; 2>/dev/null | \
-  grep -oE 'REQ-[A-Z]+-[0-9]+' | sort -u
+  grep -oE 'REQ-[A-Z0-9]+-[0-9]+' | sort -u
 
 echo ""
 echo "=== UNCOVERED ==="
 comm -23 \
-  <(grep -oE 'REQ-[A-Z]+-[0-9]+' REQUIREMENTS.md 2>/dev/null | sort -u) \
+  <(grep -oE 'REQ-[A-Z0-9]+-[0-9]+' REQUIREMENTS.md 2>/dev/null | sort -u) \
   <(find . -type f \( \
     -name 'test*' -o \
     -name '*test.*' -o \
@@ -75,4 +75,4 @@ comm -23 \
     -not -name '*.xml' \
     -not -name '*.csproj' \
     -exec grep -ohE 'Covers:.*' {} \; 2>/dev/null | \
-    grep -oE 'REQ-[A-Z]+-[0-9]+' | sort -u)
+    grep -oE 'REQ-[A-Z0-9]+-[0-9]+' | sort -u)
